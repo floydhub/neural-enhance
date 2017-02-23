@@ -453,14 +453,6 @@ class Model(object):
 class NeuralEnhancer(object):
 
     def __init__(self, loader):
-        if args.train:
-            print('{}Training {} epochs on random image sections with batch size {}.{}'\
-                  .format(ansi.BLUE_B, args.epochs, args.batch_size, ansi.BLUE))
-        else:
-            if len(args.files) == 0: error("Specify the image(s) to enhance on the command-line.")
-            print('{}Enhancing {} image(s) specified on the command-line.{}'\
-                  .format(ansi.BLUE_B, len(args.files), ansi.BLUE))
-
         self.thread = DataLoader() if loader else None
         self.model = Model()
 
